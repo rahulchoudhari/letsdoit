@@ -1,10 +1,12 @@
 
 pipeline {
-        stages {
+    agent any
+    stages {
         stage('build') {
             steps {
                 echo 'hello my name is Jenkins'
             }
+        }
         stage('Setting permission script') {
             steps {
                 sh "chmod 755 myscript.sh"
@@ -15,6 +17,5 @@ pipeline {
                 sh "bash myscript.sh"
             }
         }
-        }
-    }
+   }
 }
